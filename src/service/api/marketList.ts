@@ -31,7 +31,7 @@ export async function fetchMarketData() {
 
     const res = transformMarketData(data);
 
-    const symbols = ["BTC", "GOLD", "SI=F", "CL"];
+    const symbols = ["GOLD", "SI=F", "CL"];
 
     response = await yahooInstance.get("/stock-quote-yahoo-finance", {
       params: {
@@ -50,7 +50,6 @@ export async function fetchMarketData() {
         symbol: item.symbol,
       }),
     );
-
 
     return res;
   } catch (error) {
